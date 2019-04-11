@@ -1,0 +1,4 @@
+auth:
+    handler: src/handlers/auth/auth.handler
+    events:
+      - http: POST /auth

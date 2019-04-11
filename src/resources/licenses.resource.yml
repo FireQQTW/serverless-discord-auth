@@ -1,0 +1,15 @@
+Resources:
+  LicensesTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: ${self:custom.${self:provider.stage}.deletion_policy}
+    Properties:
+      TableName: ${self:provider.environment.TABLE_PREFIX}-licenses
+      AttributeDefinitions:
+        - AttributeName: licenseKey
+          AttributeType: S
+      KeySchema:
+        - AttributeName: licenseKey
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: ${self:custom.tableThroughput}
+        WriteCapacityUnits: ${self:custom.tableThroughput}
