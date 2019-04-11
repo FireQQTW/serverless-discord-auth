@@ -1,4 +1,4 @@
 stripe:
     handler: src/handlers/webhooks/stripe/webhook.handler
     events:
-      - http: ANY /stripe/webhook
+      - http: ANY /webhook/stripe
