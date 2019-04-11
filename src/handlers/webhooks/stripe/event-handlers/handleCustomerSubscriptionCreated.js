@@ -8,6 +8,7 @@ exports.default = async (payload) => {
 			licenseKey: uuid.v1()
 		}	
 
+		// Create new license key
 		await licenseRepository.create(license);
 	} catch (error) {
 		throw error;
